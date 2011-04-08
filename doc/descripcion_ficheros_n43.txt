@@ -1,0 +1,93 @@
+2. Contenido de Registros
+
+- Cabecera de cuenta. 
+- Principal de movimientos. 
+- En su caso, complementarios de conceptos, hasta un máximo de 5 registros opcionales. 
+- Final de cuenta. 
+- Final de fichero
+
+Dentro de un mismo soporte magnético puede venir contenida información de más de una cuenta (esto es, se pueden repetir los cuatro primeros bloques)
+
+Los registros opcionales "Complementarios de concepto", hasta un máximo de 5, contienen dos campos con una longitud de 38 posiciones cada uno de ellos. En su caso de no ser necesarios los dos campos, el no utilizado irá en blanco.
+
+
+
+00-REGISTRO CABECERA DE ARCHIVO
+
+  DESCRIPCION CAMPO                                                     POS       LONGITUD      TIPO
+  Código de Registro, 2 posiciones 00                                   1         2             NUM
+  Clave de Banco que constituye el fichero                              3         4             NUM
+  Fecha Contable del periodo al que corresponde la información AAMMDD   7         6             NUM
+  Libre: 68 posiciones                                                  13        68            ---
+
+
+11-REGISTRO DE CABECERA DE CUENTA
+
+  DESCRIPCION CAMPO                                                     POS       LONGITUD      TIPO
+  Código de Registro, 2 posiciones  (11)                                1         2             NUM
+  Clave de Banco que constituye el fichero                              3         4             NUM
+  Clave de Oficina donde está la cuenta                                 7         4             NUM
+  No de Cuenta                                                          11        10            NUM
+  Fecha Inicial del periodo AAMMDD                                      21        6             NUM
+  Fecha Final del periodo AAMMDD                                        27        6             NUM
+  Código de saldo inicial, signo del campo inicial: 1deudor, 2 acreedor 33        1             NUM
+  Importe del saldo inicial de la cuenta, 2 decimales                   34        14            NUM
+  Clase de Divisa, clave numérica                                       48        3             NUM
+  Código de la Modalidad de Información (en este caso es:3)             51        1             NUM
+  Nombre abreviado (del Cliente Propietario de la Cuenta)               52        26            ALFANUM
+  Código del Cliente                                                    78        3             NUM
+
+
+22 REGISTRO PRINCIPAL DE MOVIMIENTOS
+
+  DESCRIPCION CAMPO                                                     POS       LONGITUD      TIPO
+  Código de Registro, 22                                                1         2             NUM
+  Libre (relleno a espacios. excepcionalmente la clave de banco)        3         4             ---
+  Clave de Oficina de origen( donde se formaliza el apunte )            7         4             NUM
+  Fecha de Operación AAMMDD                                             11        6             NUM
+  Fecha de Valor AAMMDD                                                 17        6             NUM
+  Concepto común                                                        23        2             NUM
+  Concepto Propio (el de cada Banco para sus operaciones)               25        3             NUM
+  Clave Debe o Haber: 1= Apuntes Debe, 2= Apuntes Haber                 28        1             NUM
+  Importe(del Apunte, 12 posiciones para enteros y 2 para decimales)    29        14            NUM
+  No de Documento                                                       43        10            NUM
+  Referencia 1                                                          53        12            NUM
+  Referencia 2                                                          65        16            ALFANUM
+
+
+23-REGISTROS COMPLEMENTARIOS DE CONCEPTOS OPCIONALES (5 máximo)
+
+  DESCRIPCION CAMPO                                                     POS       LONGITUD      TIPO
+  Código de Registro, 23                                                1         2             NUM
+  Código de Dato: 01 para el primer registro complementario,            3         2             NUM
+    02 para el segundo, 03 para el tercero, 04 para el cuarto, 
+    05 para el quinto
+  Concepto (Primer Campo complementario de Concepto)                    5         38            ALFANUM
+  Concepto (Segundo Campo complementario de Concepto)                   43        38            ALFANUM
+
+
+33-REGISTRO FINAL DE CUENTA
+
+  DESCRIPCION CAMPO                                                     POS       LONGITUD      TIPO
+  Código de Registro, 2 posiciones  (33)                                1         2             NUM
+  Clave de Banco que constituye el fichero                              3         4             NUM
+  Clave de Oficina donde está la cuenta                                 7         4             NUM
+  No de Cuenta                                                          11        10            NUM
+  No de Apunte Debe                                                     21        5             NUM
+  Total Importes Debe                                                   26        14            NUM
+  No Apuntes Haber                                                      40        5             NUM
+  Total Importes Haber                                                  45        14            NUM
+  Código de Saldo Final: 1= Deudor, 2= Acreedor                         59        1             NUM
+  Importe de Saldo Final                                                60        14            NUM
+  Clave de Divisa                                                       74        3             NUM
+  Libre                                                                 77        4             ---
+  
+88-REGISTRO FIN DE FICHERO
+
+  DESCRIPCION CAMPO                                                     POS       LONGITUD      TIPO
+  Código de Registro, 2 posiciones  (88)                                1         2             NUM
+  Nueves (relleno a Nueves)                                             3         18            NUM
+  No de Registro (No Total de Registros que contiene el Fichero,        21        6             NUM
+    excluyéndose a si mismo y al registro 00 Cabecera de Archivo)
+  Libre                                                                 27        54            ---
+  

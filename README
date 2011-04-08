@@ -1,0 +1,11 @@
+Parser for NORMA43 Files. (a standard from the spanish banking industry for account movements)
+
+Usage
+=====
+
+require 'lib/norma43'
+data = Norma43.read(PATH_TO_FILE)
+
+Until we write a better documentation, check what is being read with:
+
+puts data.to_yaml
