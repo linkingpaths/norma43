@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Linking Paths"]
   s.email       = ["hello@linkingpaths.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/linkingpaths/norma43"
   s.summary     = %q{A parser for norma43 files, a standard from the spanish banking industry for account movements)}
   s.description = %q{A parser for norma43 files, a standard from the spanish banking industry for account movements)}
 
