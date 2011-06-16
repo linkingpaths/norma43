@@ -1,5 +1,11 @@
 Parser for NORMA43 Files. (a standard from the spanish banking industry for account movements)
 
+Install
+=======
+
+gem install norma43
+
+
 Usage
 =====
 
