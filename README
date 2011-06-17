@@ -14,12 +14,8 @@ require 'norma43'
 
 data = Norma43.read(PATH_TO_FILE)
 
-Until we write a better documentation, check what is being read with:
 
-puts data.to_yaml
-
-
-Data format
+Data format (excerpt from data.to_yaml)
 ===========
 :info: 
   :end_date: 2011-03-20
