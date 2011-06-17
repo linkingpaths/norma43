@@ -9,9 +9,52 @@ gem install norma43
 Usage
 =====
 
-require 'lib/norma43'
+require 'rubygems'
+require 'norma43'
+
 data = Norma43.read(PATH_TO_FILE)
 
 Until we write a better documentation, check what is being read with:
 
 puts data.to_yaml
+
+
+Data format
+===========
+:info: 
+  :end_date: 2011-03-20
+  :account: 
+    :bank: 1234
+    :office: "1234"
+    :number: 1234567890
+    :control: ??
+  :final_balance: 4469.33
+  :initial_balance: 10593.16
+  :account_owner: YOUR NAME OR COMPANY
+  :currency: "978"
+  :begin_date: 2011-03-01
+:movements: 
+  - :operation_date: 2011-03-01
+    :concept: TRANSFERENC. A MR. POSTMAN
+    :value_date: 2011-03-01
+    :office: 0901
+    :operation: "0000000000"
+    :reference_1: "000000000000"
+    :reference_2: ""
+    :amount: 927.0
+  - :operation_date: 2011-03-01
+    :concept: TRANSFERENC. A MRS. ROBINSON
+    :value_date: 2011-03-01
+    :office: 0901
+    :operation: "0000000000"
+    :reference_1: "000000000000"
+    :reference_2: ""
+    :amount: 1274.09
+  - :operation_date: 2011-03-04
+    :concept: TARJ.CREDITO SANDMAN
+    :value_date: 2011-03-04
+    :office: 0901
+    :operation: "0000000000"
+    :reference_1: "281034520913"
+    :reference_2: "1234123412341234"
+    :amount: 1177.81
