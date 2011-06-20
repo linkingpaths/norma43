@@ -1,11 +1,16 @@
+require "iconv"
+
 module Norma43
   
   DATE_FORMAT = '%y%m%d'
   
-  def self.read(path_to_file)
+  def self.read(path_to_file, encoding="iso-8859-1")
     data = Hash.new
     data[:movements] = Array.new
-    File.open(path_to_file, "r").each_line do |line|
+    
+    file = File.open(path_to_file, "r") 
+    file.each do |encoded_line|
+      line = Iconv.iconv("UTF-8", "#{encoding}", encoded_line).to_s
       code = line[0..1]
       data[:info] = self.parse_header(line) if code == '11'
       data[:movements] << self.parse_movement_main(line) if code == '22'
@@ -14,7 +19,9 @@ module Norma43
       #TODO check amount values against those on record 33 
       data[:info].merge!(self.parse_end(line)) if code == '33'
       #TODO parse record 88, end of file
-    end
+    end 
+    file.close
+
     data
   end
   

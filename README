@@ -12,7 +12,9 @@ Usage
 require 'rubygems'
 require 'norma43'
 
-data = Norma43.read(PATH_TO_FILE)
+data = Norma43.read(PATH_TO_FILE, "iso-8859-1")
+
+Second parameter is the encoding of the .n43 file. As spanish banks continue in 20th Century, default is iso-8859-1.
 
 
 Data format (excerpt from data.to_yaml)
@@ -54,3 +56,14 @@ Data format (excerpt from data.to_yaml)
     :reference_1: "281034520913"
     :reference_2: "1234123412341234"
     :amount: 1177.81
+
+
+CHANGELOG
+=========
+
+0.2 - June 20, 2011
+    - Encoding of input files
+
+
+0.1 - June 15, 2011
+    - Initial version, most of parsing
