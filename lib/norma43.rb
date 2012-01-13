@@ -1,4 +1,5 @@
 require "iconv"
+require 'date'
 
 module Norma43
   
@@ -34,7 +35,7 @@ module Norma43
         :account => account,
         :begin_date => Date.strptime(line[20..25], DATE_FORMAT), #Date.from_nor43(line[20..25])
         :end_date => Date.strptime(line[26..31], DATE_FORMAT),
-        :initial_balance => parse_amount(line[33..46], line[32]),
+        :initial_balance => parse_amount(line[33..46], line[32].chr),
         :account_owner => line[51..76].strip,
         :currency => line[47..49]          
       }
@@ -47,7 +48,7 @@ module Norma43
         :operation => line[42..51],
         :reference_1 => line[52..63],
         :reference_2 => line[64..79].strip,
-        :amount => parse_amount(line[28..41], line[27]),
+        :amount => parse_amount(line[28..41], line[27].chr),
         :office => line[6..9]
       }
     end
@@ -57,11 +58,11 @@ module Norma43
     end
 
     def self.parse_end(line)
-      {:final_balance => parse_amount(line[59..72], line[28])}
+      {:final_balance => parse_amount(line[59..72], line[28].chr)}
     end
     
     def self.parse_amount(value, sign)
-      value.to_f / 100 * (sign == 1 ? -1 : 1)
+      value.to_f / 100 * (sign.to_i == 1 ? -1 : 1)
     end
   
 end

@@ -1,0 +1,93 @@
+:info: 
+  :currency: "978"
+  :final_balance: 4469.33
+  :begin_date: 2011-03-01
+  :account: 
+    :bank: "8888"
+    :office: "5555"
+    :number: "1111111111"
+    :control: ??
+  :end_date: 2011-03-20
+  :account_owner: THE EXPENDABLES REVAMP SL
+  :initial_balance: 10593.16
+:movements: 
+- :concept: TRANSFERENC. A Silvester Stallone
+  :operation_date: 2011-03-01
+  :amount: -927.0
+  :value_date: 2011-03-01
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: "000000000000"
+  :reference_2: ""
+- :concept: TRANSFERENC. A Mickey Rourke
+  :operation_date: 2011-03-01
+  :amount: -1274.09
+  :value_date: 2011-03-01
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: "000000000000"
+  :reference_2: ""
+- :concept: TRANSFERENC. Bruce Willis
+  :operation_date: 2011-03-02
+  :amount: 424.8
+  :value_date: 2011-03-02
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: "001111111111"
+  :reference_2: ""
+- :concept: TRANSFERENC. A Charisma Carpenter
+  :operation_date: 2011-03-03
+  :amount: -236.0
+  :value_date: 2011-03-03
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: "000000000000"
+  :reference_2: ""
+- :concept: APER IMPOSIC 123456789-00
+  :operation_date: 2011-03-04
+  :amount: -5000.0
+  :value_date: 2011-03-04
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: "000000000000"
+  :reference_2: ""
+- :concept: TARJ.CREDITO Hank Amos
+  :operation_date: 2011-03-04
+  :amount: -1177.81
+  :value_date: 2011-03-04
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: 098765432122
+  :reference_2: "1234123412341234"
+- :concept: TRANSFERENC. Jet Li
+  :operation_date: 2011-03-04
+  :amount: -188.2
+  :value_date: 2011-03-04
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: 098765432111
+  :reference_2: "6789678967896789"
+- :concept: TRANSFERENC. Terry Crews
+  :operation_date: 2011-03-09
+  :amount: 1539.9
+  :value_date: 2011-03-09
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: "123451234566"
+  :reference_2: ""
+- :concept: TRANSFERENC. David Zayas
+  :operation_date: 2011-03-09
+  :amount: 711.54
+  :value_date: 2011-03-09
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: 00BA12345678
+  :reference_2: ""
+- :concept: LIQ.INT.IMP. 123456789-00
+  :operation_date: 2011-03-21
+  :amount: 3.03
+  :value_date: 2011-03-19
+  :office: 0901
+  :operation: "0000000000"
+  :reference_1: "000000000000"
+  :reference_2: ""
